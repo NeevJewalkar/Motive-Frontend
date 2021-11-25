@@ -14,7 +14,7 @@ body {
     font-family: 'Avenir', 'Poppins';
 }
 
-#signup {
+#signupDesktop {
     width: 370;
     height: 70%;
     background-color: white;
@@ -22,6 +22,17 @@ body {
     position: absolute;
     left: 65%;
     top: 25%;
+    box-shadow: 0px 10px 50px 1px rgba(115, 144, 173, 0.075);
+    overflow: scroll;
+}
+
+#signupPhone {
+    width: 370;
+    height: 70%;
+    background-color: white;
+    border-radius: 15px;
+    position: absolute;
+    top: 15%;
     box-shadow: 0px 10px 50px 1px rgba(115, 144, 173, 0.075);
     overflow: scroll;
 }
@@ -116,14 +127,18 @@ body {
 <img src='../public/MYB.png' class='CAI desktop' id='CAI'>
 <script>
 
+console.log(screen.width)
+
     if (screen.width <= 480)  {
-        document.querySelector('div[class="div"]').setAttribute('id', 'createMotivePhone')
+        console.log('phone')
+        document.getElementById('signup').setAttribute('id', 'signupPhone')
         document.getElementById('CAI').classList.remove('desktop')
         document.getElementById('CAI').classList.add('phone')
     } else {
-        document.querySelector('div[class="div"]').setAttribute('id', 'createMotiveDesktop')
+        document.getElementById('signup').setAttribute('id', 'signupDesktop')
         document.getElementById('CAI').classList.remove('phone')
         document.getElementById('CAI').classList.add('desktop')
+        console.log('desktop')
     }
     
     </script>
